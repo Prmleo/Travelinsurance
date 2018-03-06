@@ -1,0 +1,94 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  
+<div class="container">
+    <div class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-8 col-md-offset-1 col-sm-7 col-sm-offset-10">                    
+            <div class="panel panel-primary" >
+                <div class="panel-heading">
+                    <div class="panel-title text-center"><i class="fa fa-sign-in" aria-hidden="true"></i> Insured Information</div>
+                </div>     
+                <div style="padding-top:30px" class="panel-body" >
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                        <form class="form-horizontal" action="" [formGroup]="myFormObject" role="form">
+                            <div style="margin-bottom: 25px" class="input-group col-sm-offset-1 col-sm-7">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user">CustomerName(English)</i></span>
+                                <input id="email" type="text" class="form-control" formControlName="cusNameEnglish" value="" placeholder="Ex:abcd">                                      
+                            </div>
+                            <div *ngIf="!cusNameEnglish.valid && cusNameEnglish.touched"  class="alert alert-danger">
+                                <p *ngIf="cusNameEnglish.hasError('required')" >
+                                  please fill the name in english
+                                </p>
+                                <p *ngIf="cusNameEnglish.hasError('noSpace')" >
+                                    Name Should not have space
+                                </p>
+                                <p *ngIf="cusNameEnglish.hasError('noNumber')" >
+                                    Name Should not have Number
+                                </p>
+                            </div> 
+                            <div style="margin-bottom: 25px" class="input-group col-sm-offset-1 col-sm-7">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user">customerName(Arabic)</i></span>
+                                <input  class="form-control"  value="" formControlName="cusNameArabic" placeholder="Ex:عالي " >  
+                            </div>
+                            <div *ngIf="!cusNameArabic.valid && cusNameArabic.touched"  class="alert alert-danger">
+                                <p *ngIf="cusNameArabic.hasError('required')" >
+                                  please fill the arabic name
+                                </p>
+                            </div> 
+                            <div style="margin-bottom: 25px" class="input-group col-sm-offset-1 col-sm-7">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign">National ID / Iqama</i></span>
+                                <input class="form-control" value="" formControlName="NationalId"  placeholder="Ex:45763764" >
+                            </div>
+                            <div *ngIf="!NationalId.valid && NationalId.touched"  class="alert alert-danger">
+                                <p *ngIf="NationalId.hasError('required')" >
+                                    please enter the national id
+                                </p>
+                                <p *ngIf="NationalId.hasError('maxlength')" >
+                                    National Id Should not more than 18 character
+                                </p>
+                              </div>   
+                            <div style="margin-bottom: 25px" class="input-group col-sm-offset-1 col-sm-7">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope">E-mail</i></span>
+                                <input  class="form-control"  value="" formControlName="mail" placeholder="Ex:abcd@gmail.com" >
+                            </div>
+                            <div *ngIf="!mail.valid && mail.touched"  class="alert alert-danger">
+                                <p *ngIf="mail.hasError('required')" >
+                                    please fill mail details
+                                </p>
+                                <p *ngIf="mail.hasError('noMail')" >
+                                    please enter valid mail id
+                                </p>
+                            </div> 
+                            <div style="margin-bottom: 25px" class="input-group col-sm-offset-1 col-sm-7">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone">mobile No</i></span>
+                                <input  class="form-control" value="05" formControlName="Mobile" placeholder="Ex:059123456789" >
+                            </div>
+                            <div *ngIf="!Mobile.valid && Mobile.touched"  class="alert alert-danger">
+                                <p *ngIf="Mobile.hasError('required')" >
+                                    please fill the mobile number
+                                </p>
+                                <p *ngIf="Mobile.hasError('minlength')" >
+                                    Mobile Number must 12 character
+                                </p>
+                                <p *ngIf="Mobile.hasError('maxlength')" >
+                                    Mobile Number Should not more than 12 character
+                                </p>
+                                <p *ngIf="Mobile.hasError('noMobil')" >
+                                    please enter valid country code first ex-05
+                                </p>
+                                <p *ngIf="Mobile.hasError('noMobStr')" >
+                                    please enter only numeric values.
+                                </p>
+                              </div> 
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+  

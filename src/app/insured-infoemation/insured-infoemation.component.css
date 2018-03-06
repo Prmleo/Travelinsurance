@@ -1,0 +1,86 @@
+#insured-tabel-head
+{
+    background-color: rgb(18, 146, 163)
+}
+
+#tabel1
+{
+    position: relative;
+    margin: 50px;
+     
+width: 500px;
+    
+}
+#headSelector
+{
+    position: relative;
+    width:80px;
+    height: 35px;
+}
+#customerName
+{
+    position: relative;
+    left:100px;
+    bottom: 38px;
+}
+.container
+{
+    position: relative;
+    right:100px;
+}
+.alert-danger
+{
+    position: relative;
+    width:390px;
+    left:60px;
+    
+}
+/*
+#customerNameArabic
+{
+    position: relative;
+    left:460px;
+    bottom: 98px;
+} 
+#customerNameArabicBox
+{
+    position: relative;
+    left:460px;
+    bottom: 115px;
+}
+#Nationality
+{
+    position: relative;
+    left:860px;
+    bottom: 180px;
+}
+#NationalityBox
+{
+    position: relative;
+    left:860px;
+    bottom: 195px;   
+}
+#Email
+{
+    position: relative;
+    bottom: 175px;   
+}
+#EmailBox
+{
+    
+    position: relative;
+    bottom: 195px;   
+}
+#Mobile
+{
+    position: relative;
+    left:460px;
+    bottom: 250px;
+}
+#MobileBox
+{
+    position: relative;
+    left:460px;
+    bottom: 268px;
+}
+*/

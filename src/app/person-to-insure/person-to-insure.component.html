@@ -1,0 +1,133 @@
+
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <div id="mainDiv">
+    
+  <form [formGroup]="myFormObject">
+   <div>   
+     <p id="head"class="panel-title text-center" ><font top="30px;" color="white"><i class="fa fa-sign-in" aria-hidden="true"></i>PERSON(S) TO INSURE</font></p>
+     <table>
+        <tr>
+          <th><font size="2px">S.No</font></th>
+          <th > <font size="2px">Passenger Name(English) </font></th>
+          <th><font size="2px">Passenger Name(Arabic)</font></th>
+          <th><font size="2px">Date Of Birth</font></th>
+          <th><font size="2px">Gender</font></th>
+          <th><font size="2px">Relations</font></th>
+          <th><font size="2px">Nationality</font></th>
+          <th><font size="2px">Iqama No/National ID</font></th>
+          <th><font size="2px">PassportNumber</font></th>
+          <th><font size="2px">PassportExpieryDate</font></th>
+          <th><font size="2px">Delete</font></th>
+        </tr>
+          <tr>
+            <td><input type="" style="width:50px;" class="form-control"/></td>
+            <td><input style="width:135px;" class="form-control"  formControlName="passengerName"/></td>
+            
+            <td><input style="width:135px;" formControlName="passengerNameArabic"   class="form-control"/></td>
+            <td><input placeholder="DD/MM/YYYY" type="date" style="width:170px;"  class="form-control"/></td>
+            <td>
+              <select style="height:35px;width:95px;"  class="form-control">
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </td>
+            <td><select style="height:35px;width:100px;"   class="form-control">
+                <option *ngFor="let rel of relationArray">{{rel.codeDesc}}</option>
+            </select></td>
+            <td>
+              <select id="nationality"style="width:120px;"  class="form-control">
+                <option *ngFor="let nation of nArray">{{nation.codeDesc}}</option>
+              </select>
+            </td>
+            <td><input style="width:100px;" formControlName="NationalId"   class="form-control"/></td>
+            <td><input style="width:160px;" formControlName="passName" class="form-control"/></td>
+            <td><input type="date" style="width:170px;"   class="form-control"/></td>
+            <td><input style="width:30px;"  class="form-control"/></td>
+          </tr>
+        </table>  
+    </div>
+    <div *ngIf="!passengerName.valid && passengerName.touched"  class="alert alert-danger">
+      <p *ngIf="passengerName.hasError('required')" >
+        please fill the name in english
+      </p>
+      <p *ngIf="passengerName.hasError('noSpace')" >
+        Name Should not have space
+    </p>
+    <p *ngIf="passengerName.hasError('noNumber')" >
+        Name Should not have Number
+    </p>
+  </div> 
+  <div *ngIf="!passengerNameArabic.valid && passengerNameArabic.touched"  class="alert alert-danger">
+    <p *ngIf="passengerNameArabic.hasError('required')" >
+      please fill the arabic name
+    </p>
+</div> 
+<div *ngIf="!NationalId.valid && NationalId.touched"  class="alert alert-danger">
+  <p *ngIf="NationalId.hasError('required')" >
+      please enter the national id
+  </p>
+  <p *ngIf="NationalId.hasError('maxlength')" >
+      National Id Should not more than 18 character
+  </p>
+</div> 
+<div *ngIf="!passName.valid && passName.touched"  class="alert alert-danger">
+  <p *ngIf="passName.hasError('required')" >
+    please fill the passport Number
+  </p>
+  <p *ngIf="passName.hasError('passNumber')" >
+    please enter the valid number
+</p>
+</div>  
+</form>
+</div>
+
+
+
+
+  
+
+    
+<!--
+
+<form class="form-horizontal"></form>
+  <div class="table-responsive">
+      
+    <table class="table table-bordered table-striped table-highlight">
+      <thead>
+          <th>S.No</th>
+          <th><font size="1px">PassengerName(English)</font></th>
+          <th>PassengerName(Arabic)</th>
+          <th>Date Of Birth</th>
+          <th>Gender</th>
+          <th>Relations</th>
+          <th>Nationality</th>
+          <th>Iqama No/National ID</th>
+          <th>PassportNumber</th>
+          <th>PassportExpieryDate</th>
+          <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="form-control" value="Some Long Name Here" /></td>
+          <td><input  style="width:30px;"/></td>
+          <td><input type="text" class="form-control" value="$12355.12" /></td>
+          <td>
+            <select class="form-control">
+                            <option>Monthly</option>
+                            <option>Yearly</option>
+                        </select>
+          </td>
+          <td><input type="text" class="form-control" value="another long value" /></td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+          <td>$505.79</td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+          <td><input type="text" class="form-control" value="some val" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</form>-->
